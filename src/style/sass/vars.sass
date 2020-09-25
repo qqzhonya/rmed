@@ -1,0 +1,423 @@
+$accent-color: #030091
+$accent-color_2: #FFE600
+$white: #ffffff
+
+$bg-light-color: rgba(3, 0, 144, 0.05)
+
+$default-font: "Raleway", sans-serif
+$second-font: "Roboto", sans-serif
+$default-transition: .35s
+$default-opacity: .8
+
+*, body, html 
+	margin: 0
+	padding: 0
+	font-family: $default-font
+	box-sizing: border-box
+
+html, body
+	min-width: 320px
+	font-weight: 500
+	font-style: normal
+	color: #000
+	background-color: $white
+
+html
+	height: 100%
+	scroll-behavior: smooth
+
+body 
+	position: relative
+	height: 100%
+
+	&.modal-active
+		overflow: hidden
+
+button,
+input,
+textarea,
+select
+	outline: none
+	border-radius: 0
+	-moz-appearance: none
+  -webkit-appearance: none
+  +prefix(appearance, none)
+
+a
+	text-decoration: none
+	outline: none
+
+.container
+	margin: 0 auto
+	padding: 0 15px
+	width: 100%
+	max-width: 1200px
+
+.btn
+	display: block
+	position: relative
+	padding: 13px 10px
+	width: 100%
+	max-width: 210px
+	font-size: 20px
+	font-weight: 700
+	color: $white
+	text-align: center
+	background-color: $accent-color
+	border: 0
+	border-radius: 50px
+	+prefix(transition, $default-transition)
+	cursor: pointer
+
+	&:hover
+		font-weight: 900
+		background-color: $accent-color_2
+
+.header
+	margin:
+		top: -130px
+	padding:
+		top: 200px
+		bottom: 200px
+	background-color: #F2F2F9
+
+	&-info
+		max-width: 700px
+
+	&-logo
+		width: 100%
+		max-width: 175px
+
+		&-img
+			width: 100%
+	
+	&-title
+		font-size: 50px
+		font-weight: 700
+		color: rgba(0, 0, 0, .8)
+		line-height: 65px
+
+	&-desc
+		font-size: 22px
+		font-weight: 400
+		color: rgba(0, 0, 0, .7)
+	
+	&-search
+		margin:
+			top: 40px
+		max-width: 670px
+
+		.search-input
+			background-color: rgba(3, 0, 145, 0.05)
+
+		.search-btn
+			position: absolute
+			top: 0
+			right: 0
+
+.search
+	position: relative
+
+	&-input
+		padding: 14px 220px 15px 20px
+		width: 100%
+		font-size: 18px
+		font-weight: 400
+		color: #000
+		border: 0
+		border-radius: 50px
+		background-color: lightgray
+		+prefix(transition, $default-transition)
+		
+		+placeholder()
+			color: rgba(0, 0, 0, .8)
+
+section
+	margin:
+		bottom: 95px
+
+	&.bg-color
+		position: relative
+		padding: 75px 0 90px 0
+
+		&:before
+			content: ''
+			display: block
+			position: absolute
+			top: 0
+			right: 0
+			width: 95%
+			height: 100%
+			border:
+				top-left-radius: 70px
+			background-color: $bg-light-color
+
+.block
+	&-title
+		font-size: 35px
+		font-weight: 700
+		color: rgba(0, 0, 0, .8)
+
+		span
+			color: $accent-color
+	
+	&-desc
+		margin:
+			top: 15px
+		max-width: 490px
+		font-size: 16px
+		font-weight: 400
+		color: rgba(0, 0, 0, .8)
+
+	&-info
+		margin:
+			top: 50px
+
+.info
+	margin: 0 -15px
+
+	&-wrap
+		+flex
+
+	&-item
+		padding: 0 15px
+		width: 25%
+		
+		&-wrap
+			+box-shadow(0px 0px 50px rgba(1, 0, 69, 0.15))
+	
+		&-img
+			position: relative
+			padding:
+				bottom: 74.1%
+			width: 100%
+
+			img
+				display: block
+				position: absolute
+				top: 0
+				left: 0
+				right: 0
+				bottom: 0
+				width: 100%
+				height: 100%
+		
+		&-bottom
+			padding: 0 25px
+
+		&-name
+			margin:
+				top: 10px
+			font-size: 18px
+			font-weight: 700
+			line-height: 24px
+			color: rgba(0, 0, 0, .8)
+			text-align: center
+
+		&-review
+			+flex
+			margin:
+				top: 8px
+			+align-items(center)
+
+			&-star-wrap
+				+flex
+
+				&.fourth
+					.info-item-review-star
+						&:nth-child(-n+4)
+							background-image: url(../img/icon/star-c.svg)
+
+			&-star
+				margin:
+					right: 2px
+				width: 15px
+				height: 15px
+				background-image: url(../img/icon/star-d.svg)
+				background-size: cover
+				background-position: center center
+				background-repeat: no-repeat
+			
+				&:last-child
+					margin: 0
+
+			&-val,
+			&-view
+				font-family: $second-font
+				font-size: 12px
+				font-weight: 400
+				color: rgba(0, 0, 0, .3)
+
+			&-val
+				display: block
+				margin:
+					left: 4px
+				+prefix(transition, $default-transition)
+
+				&:hover
+					color: #000
+
+			&-view
+				position: relative
+				margin: 0 0 0 auto
+				padding:
+					left: 26px
+				
+				&:before
+					content: ''
+					display: block
+					position: absolute
+					margin:
+						top: -6px
+					top: 50% 
+					left: 5px
+					width: 17px
+					height: 10px
+					background-image: url(../img/icon/eye.svg)
+					background-size: cover
+					background-position: center center
+					background-repeat: no-repeat
+
+		&-tag-wrap
+			+flex
+			margin:
+				top: 10px
+			+flex-wrap(wrap)
+			+align-items(center)
+
+		&-tag
+			display: block
+			margin:
+				right: 3px
+				bottom: 2px
+			padding: 4px 10px 5px 10px
+			font-family: $second-font
+			font-size: 12px
+			font-weight: 400
+			color: rgba(0, 0, 0, .3)
+			background-color: rgba(3, 0, 145, 0.1)
+			border-radius: 50px
+			+prefix(transition, $default-transition)
+
+			&:hover
+				color: $accent-color
+		
+		&-more
+			display: block
+			margin:
+				left: 7px
+			font-family: $second-font
+			font-size: 12px
+			font-weight: 400
+			color: rgba(0, 0, 0, .3)
+			text-decoration: underline
+			+prefix(transition, $default-transition)
+
+			&:hover
+				color: #000
+		
+		&-btn
+			display: block
+			margin:
+				top: 12px
+			padding: 15px 10px 16px 10px
+			width: 100%
+			font-size: 20px
+			font-weight: 700
+			color: $white
+			text-align: center
+			background-color: $accent-color
+			+prefix(transition, $default-transition)
+
+			&:hover
+				font-weight: 800
+				background-color: $accent-color_2
+	
+	&-pagination
+		+flex
+		margin:
+			top: 40px
+		+justify-content(center)
+		+align-items(center)
+
+		&-elem
+			margin: 0 6px
+			width: 10px
+			height: 10px
+			background-color: #c4c4c4
+			border-radius: 10px
+			+prefix(transition, $default-transition)
+			cursor: pointer
+
+			&:not(.active):hover
+				background-color: $accent-color
+				opacity: .5
+
+			&.active
+				background-color: $accent-color
+	
+	&-btn
+		margin: 0 auto
+			top: 50px
+		max-width: 228px
+
+.about
+	+flex
+	margin: -15px
+	+flex-wrap(wrap)
+
+	&-item
+		padding: 15px
+		width: 25%
+	
+		&-wrap
+			+flex
+			position: relative
+			padding: 25px 20px
+			background-color: $white
+			+box-shadow(0px 0px 50px rgba(1, 0, 69, 0.1))
+
+	&-img
+		+flex
+		position: absolute
+		top: 25px
+		left: 20px
+		width: 46px
+		height: 46px
+		background-color: #E6E5F4
+		border-radius: 100px
+		+justify-content(center)
+		+align-items(center)
+	
+	&-info 
+		padding:
+			left: 55px
+		
+	&-title
+		font-size: 18px
+		font-weight: 700
+		color: rgba(0, 0, 0, .8)
+	
+	&-list
+		+flex
+		margin:
+			top: 12px
+		+flex-wrap(wrap)
+	
+	&-link
+		display: block
+		margin:
+			bottom: 5px
+		width: 100%
+		font-family: $second-font
+		font-size: 12px
+		font-weight: 400
+		color: rgba(0, 0, 0, .3)
+		text-decoration: underline
+		+prefix(transition, $default-transition)
+
+		&:last-child
+			margin: 0
+
+		&:hover
+			color: $accent-color
