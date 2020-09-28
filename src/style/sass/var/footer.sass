@@ -1,0 +1,225 @@
+.footer
+	padding:
+		top: 175px
+	background-image: url(../img/icon/footer-bg.svg)
+	background-size: cover
+	background-position: center center
+	background-repeat: no-repeat
+
+	&-t
+		+flex
+		+justify-content(center)
+		+align-items(center)
+	
+	&-logo
+		width: 100%
+		max-width: 100px
+	
+	&-search
+		margin:
+			left: 30px
+		width: 100%
+		max-width: 470px
+
+		.custom-form-input
+			font-size: 16px
+			color: $white
+			background-color: rgba(255, 255, 255, 0.2)
+
+			+placeholder()
+				color: rgba(255, 255, 255, .8)
+		
+		.custom-form-btn
+			+flex
+			max-width: 50px
+			+justify-content(center)
+			+align-items(center)
+	
+	&-m
+		+flex
+		padding:
+			top: 40px
+			bottom: 30px
+
+	&-menu
+		+flex
+		width: 30%
+
+		&-list
+			margin:
+				right: 90px
+			min-width: 100px
+
+			&:last-child
+				margin:
+					right: 20px
+
+			&-link
+				display: block
+				font-size: 16px
+				font-weight: 600
+				line-height: 45px
+				color: $white
+
+				&:hover
+					font-weight: 800
+
+	&-contact
+		+flex
+		margin: 0 auto
+		width: 30%
+		color: $white
+
+		&-elem
+			width: 50%
+
+			&:first-child
+				padding:
+					right: 20px
+			
+			&:last-child
+				padding:
+					left: 20px
+		
+		&-link
+			display: inline-block
+			position: relative
+			margin:
+				bottom: 8px
+			font-size: 16px
+			font-weight: 600
+			color: $white
+			text-transform: uppercase
+
+			&:hover
+				font-weight: 800
+
+			&:last-child
+				margin: 0
+
+			&.phone
+				padding: 
+					left: 20px
+			
+				&:before
+					content: ''
+					display: block
+					position: absolute
+					top: 50%
+					left: 0
+					width: 13px
+					height: 14px
+					background-image: url(../img/icon/phone.svg)
+					background-size: cover
+					background-position: center center
+					background-repeat: no-repeat
+					+prefix(transform, translateY(-50%))
+			
+			&.mail
+				padding:
+					left: 20px
+			
+				&:before
+					content: ''
+					display: block
+					position: absolute
+					top: 50%
+					left: 0
+					width: 14px
+					height: 10px
+					background-image: url(../img/icon/mail.svg)
+					background-size: cover
+					background-position: center center
+					background-repeat: no-repeat
+					+prefix(transform, translateY(-50%))
+		
+		&-box
+			display: inline-block
+			position: relative
+			margin:
+				top: 12px
+			padding:
+				left: 22px
+			
+			&.mail
+				&:before
+					content: ''
+					display: block
+					position: absolute
+					top: 3px
+					left: 0
+					width: 14px
+					height: 10px
+					background-image: url(../img/icon/mail.svg)
+					background-size: cover
+					background-position: center center
+					background-repeat: no-repeat
+
+		&-name
+			font-size: 16px
+			font-weight: 600
+			text-transform: uppercase
+
+		&-address
+			position: relative
+			margin:
+				top: 12px
+			padding: 
+				left: 15px
+			max-width: 150px
+			font-size: 14px
+			font-weight: 400
+			line-height: 21px
+
+			&:before
+				content: ''
+				display: block
+				position: absolute
+				top: 3px
+				left: 0
+				width: 9px
+				height: 14px
+				background-image: url(../img/icon/pin-w.svg)
+				background-size: 100% auto
+				background-position: center center
+				background-repeat: no-repeat
+
+	&-info
+		+flex
+		width: 33%
+		+justify-content(flex-end)
+		+align-items(center)
+	
+	&-city
+		position: relative
+		padding: 
+			left: 17px
+			right: 30px
+		font-size: 16px
+		font-weight: 600
+		color: $white
+		text-decoration: underline
+
+		&:before
+			content: ''
+			display: block
+			position: absolute 
+			top: 0
+			left: 0
+			width: 12px 
+			height: 20px
+			background-image: url(../img/icon/pin-w.svg)
+			background-size: 100% auto
+			background-position: center center
+			background-repeat: no-repeat
+	
+	&-b
+		padding:
+			bottom: 60px
+
+	&-copyright
+		font-family: $second-font
+		font-size: 14px
+		font-weight: 400 
+		color: rgba(255, 255, 255, 0.5)
+		text-align: center

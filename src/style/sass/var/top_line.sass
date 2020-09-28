@@ -5,8 +5,13 @@
 		+align-items(center)
 
 	&-logo
+		display: block
 		width: 100%
 		max-width: 100px
+		+prefix(transition, $default-transition)
+
+		&:hover
+			opacity: $default-opacity
 
 		&-img
 			width: 100%
