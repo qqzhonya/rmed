@@ -172,7 +172,7 @@ a
 		line-height: 22px
 
 .breadcrumbs
-	margin:
+	padding:
 		top: 22px
 
 	&-elem
@@ -280,6 +280,87 @@ section
 		margin:
 			top: 50px
 
+.address
+	+flex
+	position: relative
+	padding:
+		left: 15px
+	font-family: $second-font
+	font-size: 12px 
+	font-weight: 400
+	color: rgba(0, 0, 0, .5)
+	+align-items(flex-start)
+
+	&:before 
+		content: ''
+		display: block
+		position: absolute
+		top: 0
+		left: 0
+		width: 10px
+		height: 15px
+		background-image: url(../img/icon/pin-g.svg)
+		background-size: 100% auto
+		background-position: center center
+		background-repeat: no-repeat
+
+	&-text
+		padding:
+			right: 10px
+		max-width: 145px
+
+	&-btn
+		margin: 0 0 0 auto
+		color: $accent-color
+		text-decoration: underline	
+		cursor: pointer
+
+.time
+	position: relative
+	margin:
+		top: 5px
+	padding: 
+		left: 16px
+	font-family: $second-font
+	font-size: 12px
+	font-weight: 400
+	line-height: 16px
+	color: rgba(0, 0, 0, .8)
+	
+	&:before
+		content: ''
+		display: block
+		position: absolute
+		top: 2px
+		left: 0
+		width: 12px
+		height: 12px
+		background-image: url(../img/icon/clock.svg)
+		background-size: 100% auto
+		background-position: center center
+		background-repeat: no-repeat
+
+.star
+	+flex
+	
+	&.fourth
+		.star-elem
+			&:nth-child(-n+4)
+				background-image: url(../img/icon/star-c.svg)
+
+	&-elem
+		margin:
+			right: 2px
+		width: 15px
+		height: 15px
+		background-image: url(../img/icon/star-d.svg)
+		background-size: cover
+		background-position: center center
+		background-repeat: no-repeat
+	
+		&:last-child
+			margin: 0
+
 .info
 	&-wrap
 		+flex
@@ -328,27 +409,6 @@ section
 			margin:
 				top: 8px
 			+align-items(center)
-
-			&-star-wrap
-				+flex
-
-				&.fourth
-					.info-item-review-star
-						&:nth-child(-n+4)
-							background-image: url(../img/icon/star-c.svg)
-
-			&-star
-				margin:
-					right: 2px
-				width: 15px
-				height: 15px
-				background-image: url(../img/icon/star-d.svg)
-				background-size: cover
-				background-position: center center
-				background-repeat: no-repeat
-			
-				&:last-child
-					margin: 0
 
 			&-val,
 			&-view
@@ -435,42 +495,9 @@ section
 				color: rgba(0, 0, 0, .5)
 				white-space: nowrap
 
-		&-address
-			+flex
-			position: relative
+		.address
 			margin:
 				top: 15px
-			padding:
-				left: 15px
-			font-family: $second-font
-			font-size: 12px 
-			font-weight: 400
-			color: rgba(0, 0, 0, .5)
-			+align-items(flex-start)
-
-			&:before 
-				content: ''
-				display: block
-				position: absolute
-				top: 0
-				left: 0
-				width: 10px
-				height: 15px
-				background-image: url(../img/icon/pin-g.svg)
-				background-size: 100% auto
-				background-position: center center
-				background-repeat: no-repeat
-
-			&-text
-				padding:
-					right: 10px
-				max-width: 145px
-
-			&-btn
-				margin: 0 0 0 auto
-				color: $accent-color
-				text-decoration: underline	
-				cursor: pointer
 
 		&-more
 			display: block
@@ -526,30 +553,9 @@ section
 				top: 10px
 			line-height: 16px
 
-		&-time
-			position: relative
+		.time
 			margin:
 				top: 5px
-			padding: 
-				left: 16px
-			font-family: $second-font
-			font-size: 12px
-			font-weight: 400
-			line-height: 16px
-			color: rgba(0, 0, 0, .8)
-			
-			&:before
-				content: ''
-				display: block
-				position: absolute
-				top: 2px
-				left: 0
-				width: 12px
-				height: 12px
-				background-image: url(../img/icon/clock.svg)
-				background-size: 100% auto
-				background-position: center center
-				background-repeat: no-repeat
 
 		&-desc
 			display: -webkit-box
@@ -566,7 +572,13 @@ section
 			
 		&-table
 			+flex
+			margin:
+				bottom: 15px
 			+box-shadow(0px 0px 50px rgba(1, 0, 69, 0.15))
+
+			&:last-child
+				margin:
+					bottom: 0
 
 			&-wrap
 				+flex
@@ -583,7 +595,7 @@ section
 					bottom: 17.1%
 				max-width: 270px
 		
-			.info-item-address
+			.address
 				margin:
 					top: 0
 				
@@ -592,7 +604,16 @@ section
 
 				&-text
 					color: rgba(0, 0, 0, .8)
-		
+			
+			.info-item-advantages
+				margin:
+					top: 7px
+
+			.info-item-btn
+				margin:
+					top: 35px
+				max-width: 100%
+
 			&-metro
 				position: relative
 				margin:
@@ -619,34 +640,39 @@ section
 
 			&-l
 				width: 75%
+			
+			&-r
+				width: 25%
 
-	&-pagination
-		+flex
+	.pagination
 		margin:
 			top: 40px
-		+justify-content(center)
-		+align-items(center)
-
-		&-elem
-			margin: 0 6px
-			width: 10px
-			height: 10px
-			background-color: #c4c4c4
-			border-radius: 10px
-			+prefix(transition, $default-transition)
-			cursor: pointer
-
-			&:not(.active):hover
-				background-color: $accent-color
-				opacity: .5
-
-			&.active
-				background-color: $accent-color
 
 	&-btn
 		margin: 0 auto
 			top: 50px
 		max-width: 228px
+
+.pagination 
+	+flex
+	+justify-content(center)
+	+align-items(center)
+
+	&-elem
+		margin: 0 6px
+		width: 10px
+		height: 10px
+		background-color: #c4c4c4
+		border-radius: 10px
+		+prefix(transition, $default-transition)
+		cursor: pointer
+
+		&:not(.active):hover
+			background-color: $accent-color
+			opacity: .5
+
+		&.active
+			background-color: $accent-color
 
 .about
 	+flex
@@ -928,6 +954,7 @@ section
 				background-size: 100% auto
 				background-position: center center
 				background-repeat: no-repeat
+				cursor: pointer
 				
 				&.grid
 					width: 15px
@@ -939,8 +966,6 @@ section
 					height: 13px
 					background-image: url(../img/icon/table-view.svg)
 					
-
-
 	&-more
 		margin: 0 auto
 			top: 40px
@@ -990,6 +1015,433 @@ section
 			font-weight: 400
 			line-height: 21px
 			color: #707070
+
+.social
+	+flex
+	margin: 0 -5px
+
+	&-elem
+		display: block
+		margin: 0 5px
+		width: 30px
+		height: 30px
+		background-size: 100% auto
+		background-position: center center
+		background-repeat: no-repeat
+		+prefix(transition, $default-transition)
+		
+		&:hover
+			opacity: $default-opacity
+
+		&.fb
+			background-image: url(../img/icon/fb.svg)
+		
+		&.vk
+			background-image: url(../img/icon/vk.svg)
+
+		&.inst
+			background-image: url(../img/icon/inst.svg)
+
+.clinic
+	&-header
+		position: relative
+		padding:
+			bottom: 200px
+		background-color: #F2F2F9
+
+		&:before
+			content: ''
+			display: block
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			background-image: url(../img/all/header-bg.svg)
+			background-size: 100% auto
+			background-position: center bottom -1px
+			background-repeat: no-repeat
+			z-index: 0
+
+		&-wrap
+			+flex
+
+		&-l
+			+flex
+		
+		&-logo
+			padding:
+				right: 30px
+
+		&-about
+			+flex
+			margin:
+				top: 5px
+			+align-items(center)
+
+			.address
+				margin:
+					right: 30px
+				
+				&:before
+					background-image: url(../img/icon/pin-b.svg)
+
+			.time
+				&:before
+					background-image: url(../img/icon/clock-b.svg)
+
+		.block-desc
+			max-width: 100%
+
+		.social
+			margin:
+				top: 15px
+
+		&-r
+			padding:
+				left: 30px
+			width: 100%
+			max-width: 400px
+
+		&-enroll
+			padding: 35px
+				bottom: 30px
+			width: 100%
+			background-color: $white
+			+box-shadow(0px 0px 50px rgba(1, 0, 69, 0.15))
+
+			&-text
+				font-size: 16px
+				font-weight: 700
+				line-height: 21px
+				color: rgba(0, 0, 0, .8)
+				text-align: center
+			
+			&-btn
+				margin: 0 auto
+					top: 35px
+
+	&-about
+		margin:
+			top: 30px
+			
+		&-title
+			font-size: 18px
+			font-weight: 700
+			color: rgba(0, 0, 0, .8)
+
+		&-wrap
+			+flex
+			margin: 0 -15px
+				top: 10px
+
+			&-elem
+				padding: 0 15px 
+				width: 50%
+				font-size: 16px
+				font-weight: 400
+				line-height: 21px
+				color: rgba(0, 0, 0, .8)
+
+	&-review
+		+flex
+		margin: 0 -15px
+
+		&-elem
+			padding: 0 15px
+			width: 50%
+
+		&-rating
+			+flex
+			+align-items(center)
+
+			&-val
+				position: relative
+				padding:
+					bottom: 100%
+				width: 254px
+				background-image: url(../img/icon/review-bg.svg)
+				background-size: 100% auto
+				background-position: center center
+				background-repeat: no-repeat
+
+				span
+					display: block
+					position: absolute
+					top: 50%
+					left: 50%
+					font-size: 93px
+					font-weight: 700
+					color: $white 
+					+prefix(transform, translate(-50%, -60%))
+
+			&-r
+				padding:
+					left: 20px
+
+			.star
+				&-elem
+					margin:
+						right: 5px
+					width: 40px
+					height: 40px
+			
+			&-desc
+				margin:
+					top: 20px
+				font-family: $second-font
+				font-size: 18px
+				font-weight: 400 
+				line-height: 27px
+				color: rgba(0, 0, 0, .6)
+
+			&-btn
+				margin:
+					top: 30px
+
+		&-row
+			+flex
+			line-height: 36px
+			+justify-content(space-between)
+			+align-items(center)
+
+			&-text
+				padding:
+					right: 15px
+				width: 100%
+				max-width: 340px
+				font-family: $second-font
+				font-size: 20px
+				font-weight: 700
+				color: rgba(0, 0, 0, .8)
+
+			&-line-wrap
+				+flex
+				position: relative
+				padding:
+					right: 45px
+				width: 100%
+				max-width: 180px
+				+align-items(center)
+
+			&-line
+				position: relative
+				width: 100%
+				height: 8px
+				background-color: #C4C4C4
+				border-radius: 10px
+				overflow: hidden
+
+				&:before
+					content: ''
+					display: block
+					position: absolute
+					top: 0
+					left: 0
+					width: 0%
+					height: 100%
+					background-color: $accent-color
+					border-radius: 10px
+
+				&[data-rating="0"]
+					&:before
+						width: 0%
+
+				&[data-rating="1"]
+					&:before
+						width: 20%
+
+				&[data-rating="2"]
+					&:before
+						width: 40%
+
+				&[data-rating="3"]
+					&:before
+						width: 60%
+
+				&[data-rating="4"]
+					&:before
+						width: 80%
+
+				&[data-rating="5"]
+					&:before
+						width: 100%
+
+			&-val
+				position: absolute
+				top: 50%
+				right: 0
+				font-family: $second-font
+				font-size: 20px
+				font-weight: 700
+				line-height: 36px
+				color: rgba(0, 0, 0, .5)
+				+prefix(transform, translateY(-50%))
+
+	&-comment
+		&-elem
+			margin:
+				bottom: 15px
+			padding: 25px
+				bottom: 40px
+			background-color: $white
+			+box-shadow(0px 0px 50px rgba(1, 0, 69, 0.1))
+
+			&:last-child
+				margin:
+					bottom: 0
+		
+		&-top
+			+flex
+			+align-items(center)
+		
+		&-name
+			padding:
+				right: 10px
+			font-size: 18px
+			font-weight: 700
+			color: #000
+		
+		&-date
+			margin: 0 0 0 auto
+			font-family: $second-font
+			font-size: 14px
+			font-weight: 400
+			color: #ACACAC
+		
+		&-text
+			margin:
+				top: 15px
+			font-size: 14px
+			font-weight: 400
+			line-height: 18px
+			color: rgba(0, 0, 0, .6)
+		
+		.star
+			&-elem
+				width: 17px
+				height: 17px
+
+		&-more
+			margin: 0 auto
+				top: 40px
+
+.tab
+	margin: 0 -18px
+
+	&-menu
+		+flex
+		margin: 0 -18px
+
+		&-link
+			padding: 0 18px
+			line-height: 44px
+
+			span
+				padding:
+					bottom: 10px
+				font-size: 16px
+				font-weight: 600
+				color: rgba(0, 0, 0, .6)
+				border:
+						bottom: 3px solid transparent
+				+prefix(transition, $default-transition)
+
+			&:not(.active):hover
+				span
+					color: $accent-color
+
+			&.active
+				span
+					font-weight: 800
+					color: $accent-color
+					border-color: $accent-color
+
+.gallery
+	&-wrap
+		+flex
+		margin: 0 -4px
+
+	&-elem
+		padding: 0 4px
+		width: 20%
+
+		&-wrap
+			position: relative
+			padding:
+				bottom: 100%
+			width: 100%
+
+		img
+			display: block
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			width: 100%
+			height: 100% 
+	
+	.pagination
+		margin:
+			top: 30px
+
+.price
+	+flex
+	margin: 0 -15px
+
+	&-elem
+		padding: 0 15px
+		width: 50%
+
+		&-wrap 
+			padding: 40px
+				top: 20px
+			background-color: $white
+	
+	&-item
+		margin:
+			bottom: 25px
+
+		&:last-child
+			margin:
+				bottom: 0
+
+	&-title
+		padding: 
+			left: 15px
+		font-size: 18px
+		font-weight: 700
+		color: rgba(0, 0, 0, .8)
+	
+	&-wrap
+		margin:
+			top: 10px
+
+	&-row
+		+flex
+		font-family: $second-font
+		font-size: 14px
+		font-weight: 400
+		line-height: 24px
+		color: rgba(0, 0, 0, .6)
+		+align-items(flex-end)
+
+		&:nth-child(odd)
+			background-color: #EDEDED
+		
+		&-l
+			padding:
+				left: 7px
+				right: 30px
+			width: 100%
+			max-width: 410px
+
+		&-r
+			width: 100%
+			max-width: 80px
+			font-weight: 700
+			text-align: right
 
 .subscribe
 	+flex
