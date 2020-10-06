@@ -1,0 +1,409 @@
+@media screen and (max-width: 1475px)
+	.header
+		padding:
+			bottom: 230px
+
+		&:after
+			right: 80px
+			bottom: -80px
+
+@media screen and (max-width: 1380px)
+	section
+		&.bg-color 
+			&:before
+				width: 100%
+
+@media screen and (max-width: 1180px)
+	.header
+		&:after
+			right: 0
+	
+	.footer
+		&-menu
+			width: 28%
+
+			&-list
+				margin:
+					right: 20px
+
+		&-contact
+			width: 38%
+
+@media screen and (max-width: 1100px)
+	.info
+		&-item
+			width: 33.33%
+
+			&:last-child
+				display: none
+
+@media screen and (max-width: 1024px)
+	.top-line
+		&-nav
+			&-link 
+				padding: 0  10px
+
+	.header
+		&:after
+			right: -70px
+	
+	.about
+		&-item
+			width: 33.33%
+
+	.faq
+		+flex-wrap(wrap)
+	
+		&-list
+			width: 100%
+
+			&-wrap
+				+flex
+				margin: 0 -10px	
+			
+			&-link
+				margin:
+					top: 25px
+		
+		&-link
+			margin: 0 10px
+			padding: 15px 20px
+			+flex-wrap(wrap)
+
+			&:last-child
+				margin: 0 10px
+
+			&-img-box
+				margin: 0 auto
+
+		&-info
+			margin:
+				top: 40px
+			padding: 0
+			width: 100%
+		
+			&-img-box
+				margin: 0 auto
+				padding: 0
+
+			&-img
+				position: relative
+
+@media screen and (max-width: 961px)
+	.top-line
+		&-wrap
+			padding: 20px 0 19px 0
+
+		&-box
+			display: block
+			position: absolute
+			padding: 15px
+				top: 80px
+			top: 0
+			right: -110%
+			width: 100%
+			max-width: 320px
+			z-index: 100
+			background-color: $white
+			border:
+				bottom-left-radius: 10px
+			+box-shadow(0px 0px 30px rgba(1, 0, 69, 0.15))
+			+prefix(transition, $default-transition)
+			overflow: hidden
+
+			&:after
+				content: ''
+				display: block
+				position: absolute
+				top: -40%
+				left: -85%
+				width: 200%
+				height: 190%
+				background-image: url(../img/all/abstract-bg.svg)
+				background-size: 100% auto
+				background-position: center center
+				background-repeat: no-repeat
+				+prefix(transform, rotate(10deg))
+				opacity: .3
+				z-index: 0
+
+			&.active
+				right: 0
+
+		&-nav
+			position: relative
+			+flex-flow(column)
+			text-align: right
+			z-index: 1
+			
+			&-link 
+				padding: 5px 0
+		
+		&-info
+			position: relative
+			margin:
+				top: 10px
+			+flex-flow(column)
+			+align-items(flex-end)
+			z-index: 1
+		
+		&-city
+			margin: 0
+		
+		&-btn
+			margin:
+				top: 25px
+			max-width: 100%
+
+		&-menu-btn
+			display: block
+
+	.header
+		padding:
+			bottom: 120px
+		&:after
+			display: none
+		
+		&-info
+			max-width: 100%
+		
+		&-search
+			margin: 0 auto
+				top: 40px
+
+	.about
+		margin: -5px
+		&-item
+			padding: 5px
+
+	.footer
+		&-m
+			+flex-wrap(wrap)
+			+justify-content(center)
+		
+		&-menu,
+		&-contact,
+		&-info
+			width: 50%
+			+justify-content(center)
+		
+		&-info
+			margin:
+				top: 30px	
+		
+
+@media screen and (max-width: 850px)
+	.subscribe
+		+justify-content(center)
+		+flex-wrap(wrap)
+
+		.custom-form,
+		.subscribe-desc
+			padding: 0
+			width: 100%
+			max-width: 520px
+
+		.subscribe-desc
+			text-align: center
+			order: 1
+
+		.custom-form
+			margin:
+				top: 30px
+			order: 2
+
+@media screen and (max-width: 825px)
+	.info
+		&-item
+			width: 50%
+
+			&:nth-child(n+3)
+				display: none
+	
+	.block-bg
+		top: -50px
+		right: -350px
+
+@media screen and (max-width: 761px)
+	.header
+		padding:
+			top: 40px
+		
+		&-logo 
+			max-width: 120px
+		
+		&-title
+			margin:
+				top: 20px
+			font-size: 32px
+			line-height: normal
+
+		&-desc
+			max-width: 520px
+			font-size: 16px
+			line-height: 21px
+
+@media screen and (max-width: 715px)
+	.about
+		&-item
+			width: 50%
+
+	.step
+		margin: 0 auto
+			top: -15px
+			bottom: -15px
+		max-width: 520px
+		+flex-wrap(wrap)
+
+		&-elem
+			padding: 15px
+			width: 50%
+
+	.footer
+		&-menu,
+		&-contact,
+		&-info
+			width: 100%
+		
+		&-contact
+			+flex-wrap(wrap)
+			+justify-content(center)
+
+			&-elem
+				+flex
+				+flex-flow(column)
+				+align-items(center)
+				
+				&:first-child,
+				&:last-child
+					padding: 0
+			
+			&-link
+				padding:
+					right: 10px
+
+			// &-link
+			// 	width: 100%
+
+@media screen and (max-width: 661px)
+	.faq
+		
+		&-list
+			&-wrap
+				margin: 0
+				+flex-wrap(wrap)
+
+		&-link
+			margin: 0 auto
+				bottom: 15px
+			width: 100%
+		
+			&:last-child
+				margin: 0 auto
+
+@media screen and (max-width: 620px)
+	section
+		margin:
+			bottom: 45px
+		
+		&.bg-color
+			padding: 45px 0
+
+			&.bg-color-r,
+			&.bg-color_l
+				&:before
+					border-radius: 0
+
+	.block
+		&-title
+			font-size: 24px
+		
+		&-desc
+			margin:
+				top: 10px
+		
+		&-info
+			margin:
+				top: 30px
+		
+		&-bg
+			display: none
+	
+	.info
+		.pagination
+			margin:
+				top: 25px
+		
+		&-btn
+			margin:
+				top: 30px
+
+@media screen and (max-width: 550px)
+	.info
+		&-item
+			margin: 0 auto
+			width: 100%
+			max-width: 320px
+
+			&:nth-child(n+2)
+				display: none
+	
+@media screen and (max-width: 500px)
+	.custom-form
+		&-input
+			padding:
+				right: 60px
+			font-size: 16px
+
+		&-btn
+			font-size: 0
+			max-width: 50px 
+
+			img
+				display: block
+
+@media screen and (max-width: 471px)
+	.header
+		padding: 
+			bottom: 70px
+
+	.about
+		&-item
+			margin: 0 auto
+			width: 100%
+			max-width: 320px
+			
+		&-info
+			padding:
+				left: 75px
+
+@media screen and (max-width: 420px)
+	.step
+		margin: 0
+			top: -15px
+			bottom: -15px
+
+		&-elem
+			padding: 15px 0
+			width: 100%
+
+	.footer
+		padding:
+			top: 65px
+		background-color: #030090
+		background-image: none
+		
+		&-t
+			+flex-wrap(wrap)
+		
+		&-search
+			margin: 0
+				top: 20px
+
+@media screen and (max-width: 350px)
+	.footer
+		&-contact
+			&-elem
+				margin:
+					top: 30px
+				width: 100%

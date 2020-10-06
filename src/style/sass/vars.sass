@@ -88,6 +88,7 @@ a
 		top: 70px
 		bottom: 385px
 	background-color: #F2F2F9
+	overflow: hidden
 
 	&:before
 		content: ''
@@ -108,16 +109,17 @@ a
 		display: block
 		position: absolute
 		bottom: 0
-		right: 19%
+		right: 300px
 		width: 100%
 		max-width: 600px
 		height: 100%
 		max-height: 887px
 		background-image: url(../img/all/doctor.png)
 		background-size: 100% auto
-		background-position: center center
+		background-position: top center
 		background-repeat: no-repeat
 		z-index: 0
+		+prefix(transition, $default-transition)
 
 	&-info
 		position: relative
@@ -216,6 +218,10 @@ a
 		position: absolute
 		top: 0
 		right: 0
+
+		img
+			display: none
+			margin: 0 auto
 
 section
 	margin:
@@ -365,7 +371,7 @@ section
 	&-wrap
 		+flex
 		margin: -15px
-		+flex-wrap(wrap)
+		+align-content(stretch)
 
 	&-item
 		padding: 15px
@@ -374,6 +380,7 @@ section
 		&-wrap
 			padding:
 				bottom: 20px
+			height: 100%
 			+box-shadow(0px 0px 50px rgba(1, 0, 69, 0.15))
 	
 		&-img
@@ -524,6 +531,7 @@ section
 			position: relative 
 			padding:
 				left: 23px
+				right: 10px
 			font-family: $second-font
 			font-size: 12px
 			font-weight: 400
@@ -745,7 +753,7 @@ section
 	margin:
 		bottom: 30px
 
-.tab
+.faq
 	+flex
 
 	&-list

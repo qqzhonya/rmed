@@ -17,6 +17,11 @@
 		&-img
 			width: 100%
 
+	&-box
+		+flex
+		width: 100%
+		+align-items(center)
+
 	&-nav
 		+flex
 		margin: 0 auto
@@ -72,3 +77,55 @@
 			background-size: 100% auto
 			background-position: center center
 			background-repeat: no-repeat
+
+	&-menu-btn
+		display: none
+		position: relative
+		margin: 0 0 0 auto
+		width: 100% 
+		max-width: 32px
+		height: 20px
+		cursor: pointer
+		z-index: 110
+
+		span
+			display: block
+			position: absolute
+			left: 0
+			width: 100%
+			height: 2px
+			background-color: $accent-color
+			+prefix(transition, $default-transition)
+
+			&:nth-child(1)
+				top: 0
+			
+			&:nth-child(2)
+				margin:
+					top: -1px
+				top: 50%
+				+prefix(transition-delay, .19s)
+
+			&:nth-child(3)
+				bottom: 0
+		
+		&.active
+			span 
+				&:nth-child(2)
+					width: 0
+					+prefix(transition-delay, 0s)
+				
+				&:nth-child(1),
+				&:nth-child(3)
+					margin:
+						top: -1px
+					top: 50%
+					bottom: auto
+
+				&:nth-child(1)
+					+prefix(transform, rotate(-43deg))
+				
+				&:nth-child(3)
+					+prefix(transform, rotate(43deg))
+				
+

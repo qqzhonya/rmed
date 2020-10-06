@@ -1,0 +1,105 @@
+.modal
+	display: block
+	position: fixed
+	padding: 100px 20px
+	width: 100%
+	height: 100%
+	z-index: 1000
+	overflow-y: auto
+
+	&-body
+		display: block 
+		position: relative
+		margin: 0 auto
+		padding: 30px
+		width: 100%
+		background-color: $white
+		+box-shadow(0px 0px 30px rgba(1, 0, 69, 0.15))
+	
+.modal-review
+	.modal-body
+		padding: 55px
+			bottom: 45px
+		max-width: 612px
+	
+	&-input,
+	&-textarea
+		padding: 15px 28px
+		width: 100%
+		font-size: 16px
+		font-weight: 400
+		color: rgba(0, 0, 0, .8)
+		border: 0
+		background-color: #F3F3F3
+		+prefix(transition, $default-transition)
+		
+		&:focus
+			+placeholder
+				color: rgba(0, 0, 0, .8)
+
+		+placeholder()
+			color: rgba(0, 0, 0, .5)
+			+prefix(transition, $default-transition)
+	
+	&-input
+		border-radius: 100px
+	
+	&-textarea
+		margin:
+			top: 15px
+		min-height: 192px
+		border-radius: 20px
+		resize: vertical
+	
+	&-wrap
+		margin:
+			top: 35px
+
+	&-row
+		+flex
+		margin:
+			bottom: 5px
+		+align-items(center)
+
+		&-all
+			margin:
+				top: 30px
+
+			.modal-review-l
+				font-weight: 700
+	
+	&-l
+		font-size: 16px
+		font-weight: 400
+		line-height: 16px
+		color: rgba(0, 0, 0, .8)
+
+	&-r 
+		+flex
+		margin: 0 0 0 auto
+		+align-items(center)
+	
+	.star
+		margin:
+			right: 17px
+			
+		&-elem
+			margin:
+				right: 3px
+			width: 23px
+			height: 23px
+			cursor: pointer
+			+prefix(transition, $default-transition)
+
+			&:hover
+				opacity: $default-opacity
+	
+	&-val
+		font-size: 16px
+		font-weight: 400
+		line-height: 24px
+		color: rgba(0, 0, 0, .5)
+	
+	&-btn
+		margin: 0 auto
+			top: 40px
